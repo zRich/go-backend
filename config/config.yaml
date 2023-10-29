@@ -1,0 +1,13 @@
+server:
+  port: 3000
+# Postgres 数据库配置
+
+database:
+  host: 127.0.0.1
+  port: 5432
+  user: postgresuser
+  password: postgrespw
+  dbname: blockchain
+
+jwt:
+  secret: jwtsecret
