@@ -5,7 +5,7 @@ import (
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	auth "github.com/zRich/go-backend/auth"
+	"github.com/zRich/go-backend/internal/auth"
 )
 
 type ServerConfig struct {
