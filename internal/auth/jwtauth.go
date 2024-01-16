@@ -12,7 +12,7 @@ import (
 	"github.com/zRich/go-backend/internal/db/models"
 )
 
-func RequireAuth(c *gin.Context) {
+func JWTAuth(c *gin.Context) {
 	//get the token from the cookie
 	tokenString, err := c.Cookie("Authorization")
 

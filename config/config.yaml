@@ -3,6 +3,7 @@ server:
 # Postgres 数据库配置
 
 database:
+  type: postgres
   host: 127.0.0.1
   port: 5432
   user: postgresuser

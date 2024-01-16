@@ -3,5 +3,8 @@ package server
 import "github.com/gin-gonic/gin"
 
 type Endpoint interface {
-	Handler(c *gin.Context)
+	Method() string
+	Path() string
+	LoginVerify() bool
+	Handler(ctx *gin.Context)
 }

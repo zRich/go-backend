@@ -1,6 +1,5 @@
 /*
 Copyright © 2023 NAME HERE <EMAIL ADDRESS>
-
 */
 package main
 
@@ -22,27 +21,32 @@ func main() {
 		panic(fmt.Errorf("fatal error config file: %w ", err))
 	}
 
-	// 从配置文件中读取 postgresql 的配置
-	dbConfig := &db.DBConfig{
-		Host:     viper.GetString("database.host"),
-		Port:     viper.GetInt("database.port"),
-		User:     viper.GetString("database.user"),
-		Password: viper.GetString("database.password"),
-		DBName:   viper.GetString("database.dbname"),
-	}
+	// // 从配置文件中读取 postgresql 的配置
+	// dbConfig, err := db.GlobalConfig()
+	// if err != nil {
+	// 	panic(fmt.Errorf("fatal error config file: %w ", err))
+	// }
+	// // 初始化数据库连接
+	database, err := db.InitDBFromConfig()
+	// err = db.InitDB(dbConfig)
 
-	db := db.NewDatabase(dbConfig)
-	db.Connect()
-	db.SyncDatabase()
-
-	port := viper.GetInt("server.port")
-	fmt.Println(port)
-	httpConfig := &server.ServerConfig{
-		Port: port,
-	}
-	server := server.NewServer(httpConfig)
-	err = server.Start()
 	if err != nil {
 		panic(fmt.Errorf("fatal error config file: %w ", err))
 	}
+
+	restConfig, err := server.GlobalConfig()
+	if err != nil {
+		panic(fmt.Errorf("fatal error config file: %w ", err))
+	}
+
+	restServer := server.NewServer(restConfig, *database)
+
+	// 注册路由
+
+	// 启动 http 服务
+	err = restServer.Start()
+	if err != nil {
+		panic(fmt.Errorf("fatal error config file: %w ", err))
+	}
+
 }
