@@ -1,19 +1,15 @@
 package server
 
 import (
-	"fmt"
 	"net/http"
 
-	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	"github.com/zRich/go-backend/internal/auth"
-	"github.com/zRich/go-backend/internal/db"
-	"github.com/zRich/go-backend/internal/log"
 )
 
 type Server interface {
 	Start() error
 	AddEndpoint(endpoint Endpoint)
+	GetEndpoints() []Endpoint
 }
 
 type HttpResonpose struct {
@@ -22,42 +18,13 @@ type HttpResonpose struct {
 	Data    interface{} `json:"data"`
 }
 
-type HttpServer struct {
-	DB     db.Database
-	Config *RestConfig
-	engine *gin.Engine
-}
-
-// 返回 server 的engine
-func (s *HttpServer) Engine() *gin.Engine {
-	return s.engine
-}
-
-func (s *HttpServer) Start() error {
-	r := gin.Default()
-
-	log.Log.Info("server start")
-	r.Use(cors.Default())
-	return r.Run(fmt.Sprintf(":%d", s.Config.Port))
-}
-
-func (s *HttpServer) AddEndpoint(endpoint Endpoint) {
-	//todo 根据配置文件判断是否需要登录验证和验证方式
-	handlers := []gin.HandlerFunc{auth.JWTAuth, endpoint.Handler}
-	if !endpoint.LoginVerify() {
-		handlers = handlers[1:]
-	}
-	s.engine.Handle(endpoint.Method(), endpoint.Path(), handlers...)
-
-}
-
-func NewServer(config *RestConfig, DB db.Database) Server {
-	restServer := &HttpServer{
-		Config: config,
-		DB:     DB,
-	}
-	return restServer
-}
+// func NewServer(config *RestConfig, DB db.Database) Server {
+// 	restServer := &HttpServer{
+// 		Config: config,
+// 		DB:     DB,
+// 	}
+// 	return restServer
+// }
 
 // Cors 跨域中间件
 func Cors() gin.HandlerFunc {
@@ -92,5 +59,13 @@ func Cors() gin.HandlerFunc {
 			}
 		}()
 		c.Next()
+	}
+}
+
+func WrapResponse(code int, message string, data interface{}) HttpResonpose {
+	return HttpResonpose{
+		Code:    code,
+		Message: message,
+		Data:    data,
 	}
 }

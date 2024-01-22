@@ -7,8 +7,8 @@ import (
 	"fmt"
 
 	"github.com/spf13/viper"
+	"github.com/zRich/go-backend/api"
 	"github.com/zRich/go-backend/internal/db"
-	"github.com/zRich/go-backend/internal/server"
 )
 
 func main() {
@@ -28,22 +28,25 @@ func main() {
 	// }
 	// // 初始化数据库连接
 	database, err := db.InitDBFromConfig()
-	// err = db.InitDB(dbConfig)
+	database.AutoMigrate()
 
 	if err != nil {
 		panic(fmt.Errorf("fatal error config file: %w ", err))
 	}
 
-	restConfig, err := server.GlobalConfig()
+	restConfig := api.RestServerConfig{}
+
+	restConfig.Address = viper.GetString("server.address")
+	restConfig.Port = viper.GetInt("server.port")
+	restConfig.DB = database
+
 	if err != nil {
 		panic(fmt.Errorf("fatal error config file: %w ", err))
 	}
 
-	restServer := server.NewServer(restConfig, *database)
+	// restServer := server.NewServer(restConfig, database)
+	restServer := api.NewRestServer(restConfig)
 
-	// 注册路由
-
-	// 启动 http 服务
 	err = restServer.Start()
 	if err != nil {
 		panic(fmt.Errorf("fatal error config file: %w ", err))

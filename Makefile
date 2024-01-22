@@ -1,2 +1,2 @@
 run:
-	@go build -o bin/$(APP_NAME) main.go
+	@go build -o ../lab-backend main.go

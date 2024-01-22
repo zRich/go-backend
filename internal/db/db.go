@@ -8,9 +8,10 @@ var DB *gorm.DB
 
 type Database interface {
 	Connect() (*gorm.DB, error)
+	AutoMigrate()
 }
 
-func InitDB(config *DBConfig) (*Database, error) {
+func InitDB(config *DBConfig) (Database, error) {
 	var err error
 	switch config.Type {
 	case "postgres":
@@ -19,14 +20,14 @@ func InitDB(config *DBConfig) (*Database, error) {
 		if err != nil {
 			return nil, err
 		}
-		return &database, nil
+		return database, nil
 	default:
 		panic("unsupported database type")
 	}
 	// return nil, nil
 }
 
-func InitDBFromConfig() (*Database, error) {
+func InitDBFromConfig() (Database, error) {
 	config, err := GlobalConfig()
 	if err != nil {
 		return nil, err

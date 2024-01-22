@@ -4,6 +4,9 @@ import "log/slog"
 
 var Log *slog.Logger
 
-func InitLogger() {
-	Log = slog.Default()
+func InitLogger() *slog.Logger {
+	if Log == nil {
+		Log = slog.Default()
+	}
+	return Log
 }

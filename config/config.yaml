@@ -8,7 +8,7 @@ database:
   port: 5432
   user: postgresuser
   password: postgrespw
-  dbname: blockchain
+  dbname: elearning
 
 jwt:
   secret: jwtsecret

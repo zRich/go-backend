@@ -4,6 +4,9 @@ import "gorm.io/gorm"
 
 type User struct {
 	gorm.Model
-	Email    string `gorm:"uniqueIndex"`
-	Password string
+	// useer name, default is ""
+	Name  string `gorm:"default:''"`
+	Email *string
+	//student's password in hash，default is ""
+	Password string `gorm:"default:''"`
 }

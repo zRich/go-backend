@@ -1,0 +1,29 @@
+@base_url = http://localhost:3000/api
+GET {{base_url}}/courses
+
+### Signup
+POST  http://localhost:3000/signup
+Content-Type: application/json
+
+{
+  "email": "zhao.zhenhua@gmail.com",
+    "password": "12345678"
+}
+
+### Login
+POST  http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "email": "zhao.zhenhua@gmail.com",
+    "password": "12345678"
+}
+
+### Post course
+POST  {{base_url}}/courses
+Content-Type: application/json
+
+{
+  "name": "区块链实训",
+  "description": "Hyperledger Fabric实训"
+}

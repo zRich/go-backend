@@ -22,9 +22,12 @@ func NewPostgreDB(config *DBConfig) Database {
 	return postgres
 }
 
-func (p *PostgreDB) SyncDatabase() {
+func (p *PostgreDB) AutoMigrate() {
 	// 自动迁移
 	p.DB.AutoMigrate(&models.User{})
+	p.DB.AutoMigrate(&models.Course{})
+	p.DB.AutoMigrate(&models.Task{})
+	p.DB.AutoMigrate(&models.Student{})
 }
 
 func (p *PostgreDB) Connect() (*gorm.DB, error) {

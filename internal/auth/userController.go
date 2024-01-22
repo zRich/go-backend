@@ -34,7 +34,7 @@ func Signup(c *gin.Context) {
 	}
 
 	user := models.User{
-		Email:    body.Email,
+		Email:    &body.Email,
 		Password: string(hash),
 	}
 
@@ -52,7 +52,7 @@ func Signup(c *gin.Context) {
 	})
 }
 
-func Login(c *gin.Context) {
+func LoginPlaintextPasswordJWT(c *gin.Context) {
 	//get the email & password from the request body
 
 	var body struct {
@@ -108,7 +108,9 @@ func Login(c *gin.Context) {
 
 	c.SetSameSite(http.SameSiteLaxMode)
 	c.SetCookie("Authorization", tokenString, 3600*24, "", "", false, true)
-	c.JSON(http.StatusOK, gin.H{})
+	c.JSON(http.StatusOK, gin.H{
+		"token": tokenString},
+	)
 }
 
 func Validate(c *gin.Context) {
