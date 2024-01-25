@@ -3,7 +3,6 @@ package api
 import (
 	"fmt"
 
-	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/zRich/go-backend/internal/auth"
 	"github.com/zRich/go-backend/internal/db"
@@ -42,13 +41,19 @@ func (s *RestServer) Engine() *gin.Engine {
 func (s *RestServer) Start() error {
 	r := s.engine
 
-	r.POST("/signup", auth.Signup)
-	r.POST("/login", auth.LoginPlaintextPasswordJWT)
-	// r.GET("/validate", auth.RequireAuth, auth.Validate)
+	r.Use(server.Cors())
+
+	// route group version 1
+	v1 := r.Group("/api/v1")
+	{
+		v1.POST("/auth/signup", auth.Signup)
+		v1.POST("/auth/login", auth.LoginPlaintextPasswordJWT)
+		v1.POST("/auth/forgetPassword", auth.ForgetPassword)
+		//reset password
+		v1.POST("/auth/resetPassword", auth.ResetPassword)
+	}
 
 	logger.Info("server start")
-
-	r.Use(cors.Default())
 
 	s.initServer()
 

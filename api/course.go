@@ -22,7 +22,7 @@ func (e *GetCoursesEndpoint) Path() string {
 }
 
 func (e *GetCoursesEndpoint) LoginVerify() bool {
-	return true
+	return false
 }
 
 func (e GetCoursesEndpoint) Handler(ctx *gin.Context) {
@@ -30,7 +30,7 @@ func (e GetCoursesEndpoint) Handler(ctx *gin.Context) {
 	var response server.HttpResonpose
 
 	_end, _ := strconv.Atoi(ctx.DefaultQuery("_end", "10"))
-	_start, _ := strconv.Atoi(ctx.DefaultQuery("_start", "1"))
+	_start, _ := strconv.Atoi(ctx.DefaultQuery("_start", "0"))
 
 	if err := db.DB.Limit(_end - _start).Offset(_start).Find(&courses).Error; err != nil {
 		response = server.WrapResponse(http.StatusInternalServerError, err.Error(), nil)

@@ -6,8 +6,8 @@ POST  http://localhost:3000/signup
 Content-Type: application/json
 
 {
-  "email": "zhao.zhenhua@gmail.com",
-    "password": "12345678"
+  "userId": "zhao.zhenhua@gmail.com",
+  "password": "12345678"
 }
 
 ### Login
@@ -15,8 +15,8 @@ POST  http://localhost:3000/login
 Content-Type: application/json
 
 {
-  "email": "zhao.zhenhua@gmail.com",
-    "password": "12345678"
+  "userId": "zhao.zhenhua@gmail.com",
+  "password": "12345678"
 }
 
 ### Post course
@@ -26,4 +26,34 @@ Content-Type: application/json
 {
   "name": "区块链实训",
   "description": "Hyperledger Fabric实训"
+}
+
+### Get course with token
+//将 token 值放入 Cookie 中
+GET  {{base_url}}/courses
+Cookie: Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDYwNjQ1MzYsInN1YiI6MX0.QnV-920SP_GZhn6Ejfh4b367Aedv70b13cSP2rlImNY"
+
+### Get course without token
+GET  {{base_url}}/courses
+
+### Create a student
+POST  {{base_url}}/students
+Content-Type: application/json
+
+{
+  "studentNo": "赵振华",
+  "wechat": "riczhao",
+  "phoneNumber": "18612345678",
+  "userId": "zhao.zhenhua@gmail.com"
+}
+
+### Edit a student
+PUT  {{base_url}}/students/2023000143
+Content-Type: application/json
+
+{
+  "studentNo": "2023000143",
+  "wechat": "riczhao",
+  "phoneNumber": "18927476622",
+  "userId": "zhao.zhenhua@gmail.com"
 }

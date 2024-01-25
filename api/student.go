@@ -32,7 +32,6 @@ func (e GetStudentsEndpoint) Handler(ctx *gin.Context) {
 	_start, _ := strconv.Atoi(ctx.DefaultQuery("_start", "1"))
 
 	if err := db.DB.Limit(_end - _start).Offset(_start).Find(&students).Error; err != nil {
-
 		response = server.WrapResponse(http.StatusInternalServerError, err.Error(), nil)
 		ctx.JSON(http.StatusInternalServerError, response)
 		return
@@ -110,8 +109,6 @@ func (e UpdateStudentByStudentNoEndpoint) Handler(ctx *gin.Context) {
 	}
 	ctx.JSON(http.StatusOK, student)
 }
-
-// DeleteStudentEndpoint is a struct for deleting a student.
 
 type DeleteStudentEndpoint struct {
 }
