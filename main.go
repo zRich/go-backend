@@ -38,6 +38,7 @@ func main() {
 
 	restConfig.Address = viper.GetString("server.address")
 	restConfig.Port = viper.GetInt("server.port")
+	restConfig.Prefix = viper.GetString("server.prefix")
 	restConfig.DB = database
 
 	if err != nil {

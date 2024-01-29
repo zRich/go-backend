@@ -20,7 +20,7 @@ func (e *GetUserAdminEndpoint) Method() string {
 
 // Path returns the HTTP path for this endpoint.
 func (e *GetUserAdminEndpoint) Path() string {
-	return "/api/useradmin"
+	return "/useradmin"
 }
 
 // LoginVerify returns whether this endpoint requires login verification.

@@ -18,7 +18,7 @@ func (e *GetStudentsEndpoint) Method() string {
 }
 
 func (e *GetStudentsEndpoint) Path() string {
-	return "/api/students"
+	return "/students"
 }
 
 func (e *GetStudentsEndpoint) LoginVerify() bool {
@@ -49,7 +49,7 @@ func (e *CreateStudentEndpoint) Method() string {
 }
 
 func (e *CreateStudentEndpoint) Path() string {
-	return "/api/students"
+	return "/students"
 }
 
 func (e *CreateStudentEndpoint) LoginVerify() bool {
@@ -81,7 +81,7 @@ func (e *UpdateStudentByStudentNoEndpoint) Method() string {
 }
 
 func (e *UpdateStudentByStudentNoEndpoint) Path() string {
-	return "/api/students/:studentNo"
+	return "/students/:studentNo"
 }
 
 func (e *UpdateStudentByStudentNoEndpoint) LoginVerify() bool {
@@ -118,7 +118,7 @@ func (e *DeleteStudentEndpoint) Method() string {
 }
 
 func (e *DeleteStudentEndpoint) Path() string {
-	return "/api/students/:studentNo"
+	return "/students/:studentNo"
 }
 
 func (e *DeleteStudentEndpoint) LoginVerify() bool {

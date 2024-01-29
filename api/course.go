@@ -18,7 +18,7 @@ func (e *GetCoursesEndpoint) Method() string {
 }
 
 func (e *GetCoursesEndpoint) Path() string {
-	return "/api/courses"
+	return "courses"
 }
 
 func (e *GetCoursesEndpoint) LoginVerify() bool {
@@ -50,7 +50,7 @@ func (e *CreateCourseEndpoint) Method() string {
 }
 
 func (e *CreateCourseEndpoint) Path() string {
-	return "/api/courses"
+	return "/courses"
 }
 
 func (e *CreateCourseEndpoint) LoginVerify() bool {
@@ -84,7 +84,7 @@ func (e *GetCourseByNameEndpoint) Method() string {
 }
 
 func (e *GetCourseByNameEndpoint) Path() string {
-	return "/api/courses/:name"
+	return "/courses/:name"
 }
 
 func (e *GetCourseByNameEndpoint) LoginVerify() bool {
@@ -113,7 +113,7 @@ func (e *UpdateCourseByNameEndpoint) Method() string {
 }
 
 func (e *UpdateCourseByNameEndpoint) Path() string {
-	return "/api/courses/:name"
+	return "/courses/:name"
 }
 
 func (e *UpdateCourseByNameEndpoint) LoginVerify() bool {
@@ -153,7 +153,7 @@ func (e *DeleteCourseByNameEndpoint) Method() string {
 }
 
 func (e *DeleteCourseByNameEndpoint) Path() string {
-	return "/api/courses/:name"
+	return "/courses/:name"
 }
 
 func (e *DeleteCourseByNameEndpoint) LoginVerify() bool {
