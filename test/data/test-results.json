@@ -1,0 +1,193 @@
+{
+  "stats": {
+    "suites": 6,
+    "tests": 9,
+    "passes": 8,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-01-29T14:33:44.034Z",
+    "end": "2024-01-29T14:33:45.612Z",
+    "duration": 1578
+  },
+  "tests": [
+    {
+      "title": "Should set the right unlockTime",
+      "fullTitle": "Lock Deployment Should set the right unlockTime",
+      "file": "/Users/richzhao/repos/zRich/blockchain-lab/verify-system/test/Lock.ts",
+      "duration": 1461,
+      "currentRetry": 0,
+      "err": {
+        "message": "expected 1738074823 to equal 1738074824. The numerical values of the given \"bigint\" and \"number\" inputs were compared, and they differed.",
+        "showDiff": true,
+        "actual": "1738074823",
+        "expected": "1738074824",
+        "operator": "strictEqual",
+        "stack": "AssertionError: expected 1738074823 to equal 1738074824. The numerical values of the given \"bigint\" and \"number\" inputs were compared, and they differed.\n    at Context.<anonymous> (test/Lock.ts:33:42)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)"
+      }
+    },
+    {
+      "title": "Should set the right owner",
+      "fullTitle": "Lock Deployment Should set the right owner",
+      "file": "/Users/richzhao/repos/zRich/blockchain-lab/verify-system/test/Lock.ts",
+      "duration": 7,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Should receive and store the funds to lock",
+      "fullTitle": "Lock Deployment Should receive and store the funds to lock",
+      "file": "/Users/richzhao/repos/zRich/blockchain-lab/verify-system/test/Lock.ts",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Should fail if the unlockTime is not in the future",
+      "fullTitle": "Lock Deployment Should fail if the unlockTime is not in the future",
+      "file": "/Users/richzhao/repos/zRich/blockchain-lab/verify-system/test/Lock.ts",
+      "duration": 33,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Should revert with the right error if called too soon",
+      "fullTitle": "Lock Withdrawals Validations Should revert with the right error if called too soon",
+      "file": "/Users/richzhao/repos/zRich/blockchain-lab/verify-system/test/Lock.ts",
+      "duration": 11,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Should revert with the right error if called from another account",
+      "fullTitle": "Lock Withdrawals Validations Should revert with the right error if called from another account",
+      "file": "/Users/richzhao/repos/zRich/blockchain-lab/verify-system/test/Lock.ts",
+      "duration": 11,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Shouldn't fail if the unlockTime has arrived and the owner calls it",
+      "fullTitle": "Lock Withdrawals Validations Shouldn't fail if the unlockTime has arrived and the owner calls it",
+      "file": "/Users/richzhao/repos/zRich/blockchain-lab/verify-system/test/Lock.ts",
+      "duration": 14,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Should emit an event on withdrawals",
+      "fullTitle": "Lock Withdrawals Events Should emit an event on withdrawals",
+      "file": "/Users/richzhao/repos/zRich/blockchain-lab/verify-system/test/Lock.ts",
+      "duration": 13,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Should transfer the funds to the owner",
+      "fullTitle": "Lock Withdrawals Transfers Should transfer the funds to the owner",
+      "file": "/Users/richzhao/repos/zRich/blockchain-lab/verify-system/test/Lock.ts",
+      "duration": 17,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    }
+  ],
+  "pending": [],
+  "failures": [
+    {
+      "title": "Should set the right unlockTime",
+      "fullTitle": "Lock Deployment Should set the right unlockTime",
+      "file": "/Users/richzhao/repos/zRich/blockchain-lab/verify-system/test/Lock.ts",
+      "duration": 1461,
+      "currentRetry": 0,
+      "err": {
+        "message": "expected 1738074823 to equal 1738074824. The numerical values of the given \"bigint\" and \"number\" inputs were compared, and they differed.",
+        "showDiff": true,
+        "actual": "1738074823",
+        "expected": "1738074824",
+        "operator": "strictEqual",
+        "stack": "AssertionError: expected 1738074823 to equal 1738074824. The numerical values of the given \"bigint\" and \"number\" inputs were compared, and they differed.\n    at Context.<anonymous> (test/Lock.ts:33:42)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)"
+      }
+    }
+  ],
+  "passes": [
+    {
+      "title": "Should set the right owner",
+      "fullTitle": "Lock Deployment Should set the right owner",
+      "file": "/Users/richzhao/repos/zRich/blockchain-lab/verify-system/test/Lock.ts",
+      "duration": 7,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Should receive and store the funds to lock",
+      "fullTitle": "Lock Deployment Should receive and store the funds to lock",
+      "file": "/Users/richzhao/repos/zRich/blockchain-lab/verify-system/test/Lock.ts",
+      "duration": 1,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Should fail if the unlockTime is not in the future",
+      "fullTitle": "Lock Deployment Should fail if the unlockTime is not in the future",
+      "file": "/Users/richzhao/repos/zRich/blockchain-lab/verify-system/test/Lock.ts",
+      "duration": 33,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Should revert with the right error if called too soon",
+      "fullTitle": "Lock Withdrawals Validations Should revert with the right error if called too soon",
+      "file": "/Users/richzhao/repos/zRich/blockchain-lab/verify-system/test/Lock.ts",
+      "duration": 11,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Should revert with the right error if called from another account",
+      "fullTitle": "Lock Withdrawals Validations Should revert with the right error if called from another account",
+      "file": "/Users/richzhao/repos/zRich/blockchain-lab/verify-system/test/Lock.ts",
+      "duration": 11,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Shouldn't fail if the unlockTime has arrived and the owner calls it",
+      "fullTitle": "Lock Withdrawals Validations Shouldn't fail if the unlockTime has arrived and the owner calls it",
+      "file": "/Users/richzhao/repos/zRich/blockchain-lab/verify-system/test/Lock.ts",
+      "duration": 14,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Should emit an event on withdrawals",
+      "fullTitle": "Lock Withdrawals Events Should emit an event on withdrawals",
+      "file": "/Users/richzhao/repos/zRich/blockchain-lab/verify-system/test/Lock.ts",
+      "duration": 13,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "Should transfer the funds to the owner",
+      "fullTitle": "Lock Withdrawals Transfers Should transfer the funds to the owner",
+      "file": "/Users/richzhao/repos/zRich/blockchain-lab/verify-system/test/Lock.ts",
+      "duration": 17,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    }
+  ]
+}

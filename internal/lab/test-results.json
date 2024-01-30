@@ -1,0 +1,558 @@
+{
+  "stats": {
+    "suites": 6,
+    "tests": 9,
+    "passes": 0,
+    "pending": 0,
+    "failures": 9,
+    "start": "2024-01-30T03:50:23.124Z",
+    "end": "2024-01-30T03:50:23.431Z",
+    "duration": 307
+  },
+  "tests": [
+    {
+      "title": "Should set the right unlockTime",
+      "fullTitle": "Lock Deployment Should set the right unlockTime",
+      "file": "/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts",
+      "duration": 288,
+      "currentRetry": 0,
+      "err": {
+        "stack": "Error: read ECONNRESET\n    at TCP.onStreamRead (node:internal/stream_base_commons:217:20)",
+        "message": "read ECONNRESET",
+        "errno": -54,
+        "code": "ECONNRESET",
+        "syscall": "read"
+      }
+    },
+    {
+      "title": "Should set the right owner",
+      "fullTitle": "Lock Deployment Should set the right owner",
+      "file": "/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts",
+      "duration": 5,
+      "currentRetry": 0,
+      "err": {
+        "stack": "HardhatError: HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config\n    at HttpProvider._fetchJsonRpcResponse (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:221:15)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async HttpProvider.request (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:85:29)\n    at async Object.latest (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/helpers/time/latest.ts:9:24)\n    at async deployOneYearLockFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:18:25)\n    at async loadFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)\n    at async Context.<anonymous> (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:37:31)\n\n    Caused by: Error: connect ECONNREFUSED 127.0.0.1:8545\n        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1595:16)",
+        "message": "HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config",
+        "parent": {
+          "errno": -61,
+          "code": "ECONNREFUSED",
+          "syscall": "connect",
+          "address": "127.0.0.1",
+          "port": 8545
+        },
+        "name": "HardhatError",
+        "_stack": "HardhatError: HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config\n    at HttpProvider._fetchJsonRpcResponse (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:221:15)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async HttpProvider.request (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:85:29)\n    at async Object.latest (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/helpers/time/latest.ts:9:24)\n    at async deployOneYearLockFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:18:25)\n    at async loadFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)\n    at async Context.<anonymous> (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:37:31)",
+        "errorDescriptor": {
+          "number": 108,
+          "message": "Cannot connect to the network %network%.\nPlease make sure your node is running, and check your internet connection and networks config",
+          "title": "Cannot connect to the network",
+          "description": "Cannot connect to the network.\n\nPlease make sure your node is running, and check your internet connection and networks config.",
+          "shouldBeReported": false
+        },
+        "number": 108,
+        "messageArguments": {
+          "network": "localhost"
+        },
+        "_isHardhatError": true
+      }
+    },
+    {
+      "title": "Should receive and store the funds to lock",
+      "fullTitle": "Lock Deployment Should receive and store the funds to lock",
+      "file": "/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts",
+      "duration": 2,
+      "currentRetry": 0,
+      "err": {
+        "stack": "HardhatError: HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config\n    at HttpProvider._fetchJsonRpcResponse (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:221:15)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async HttpProvider.request (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:85:29)\n    at async Object.latest (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/helpers/time/latest.ts:9:24)\n    at async deployOneYearLockFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:18:25)\n    at async loadFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)\n    at async Context.<anonymous> (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:43:38)\n\n    Caused by: Error: connect ECONNREFUSED 127.0.0.1:8545\n        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1595:16)",
+        "message": "HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config",
+        "parent": {
+          "errno": -61,
+          "code": "ECONNREFUSED",
+          "syscall": "connect",
+          "address": "127.0.0.1",
+          "port": 8545
+        },
+        "name": "HardhatError",
+        "_stack": "HardhatError: HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config\n    at HttpProvider._fetchJsonRpcResponse (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:221:15)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async HttpProvider.request (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:85:29)\n    at async Object.latest (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/helpers/time/latest.ts:9:24)\n    at async deployOneYearLockFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:18:25)\n    at async loadFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)\n    at async Context.<anonymous> (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:43:38)",
+        "errorDescriptor": {
+          "number": 108,
+          "message": "Cannot connect to the network %network%.\nPlease make sure your node is running, and check your internet connection and networks config",
+          "title": "Cannot connect to the network",
+          "description": "Cannot connect to the network.\n\nPlease make sure your node is running, and check your internet connection and networks config.",
+          "shouldBeReported": false
+        },
+        "number": 108,
+        "messageArguments": {
+          "network": "localhost"
+        },
+        "_isHardhatError": true
+      }
+    },
+    {
+      "title": "Should fail if the unlockTime is not in the future",
+      "fullTitle": "Lock Deployment Should fail if the unlockTime is not in the future",
+      "file": "/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {
+        "stack": "HardhatError: HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config\n    at HttpProvider._fetchJsonRpcResponse (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:221:15)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async HttpProvider.request (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:85:29)\n    at async Object.latest (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/helpers/time/latest.ts:9:24)\n    at async Context.<anonymous> (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:54:26)\n\n    Caused by: Error: connect ECONNREFUSED 127.0.0.1:8545\n        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1595:16)",
+        "message": "HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config",
+        "parent": {
+          "errno": -61,
+          "code": "ECONNREFUSED",
+          "syscall": "connect",
+          "address": "127.0.0.1",
+          "port": 8545
+        },
+        "name": "HardhatError",
+        "_stack": "HardhatError: HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config\n    at HttpProvider._fetchJsonRpcResponse (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:221:15)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async HttpProvider.request (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:85:29)\n    at async Object.latest (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/helpers/time/latest.ts:9:24)\n    at async Context.<anonymous> (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:54:26)",
+        "errorDescriptor": {
+          "number": 108,
+          "message": "Cannot connect to the network %network%.\nPlease make sure your node is running, and check your internet connection and networks config",
+          "title": "Cannot connect to the network",
+          "description": "Cannot connect to the network.\n\nPlease make sure your node is running, and check your internet connection and networks config.",
+          "shouldBeReported": false
+        },
+        "number": 108,
+        "messageArguments": {
+          "network": "localhost"
+        },
+        "_isHardhatError": true
+      }
+    },
+    {
+      "title": "Should revert with the right error if called too soon",
+      "fullTitle": "Lock Withdrawals Validations Should revert with the right error if called too soon",
+      "file": "/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {
+        "stack": "HardhatError: HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config\n    at HttpProvider._fetchJsonRpcResponse (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:221:15)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async HttpProvider.request (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:85:29)\n    at async Object.latest (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/helpers/time/latest.ts:9:24)\n    at async deployOneYearLockFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:18:25)\n    at async loadFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)\n    at async Context.<anonymous> (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:65:26)\n\n    Caused by: Error: connect ECONNREFUSED 127.0.0.1:8545\n        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1595:16)",
+        "message": "HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config",
+        "parent": {
+          "errno": -61,
+          "code": "ECONNREFUSED",
+          "syscall": "connect",
+          "address": "127.0.0.1",
+          "port": 8545
+        },
+        "name": "HardhatError",
+        "_stack": "HardhatError: HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config\n    at HttpProvider._fetchJsonRpcResponse (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:221:15)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async HttpProvider.request (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:85:29)\n    at async Object.latest (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/helpers/time/latest.ts:9:24)\n    at async deployOneYearLockFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:18:25)\n    at async loadFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)\n    at async Context.<anonymous> (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:65:26)",
+        "errorDescriptor": {
+          "number": 108,
+          "message": "Cannot connect to the network %network%.\nPlease make sure your node is running, and check your internet connection and networks config",
+          "title": "Cannot connect to the network",
+          "description": "Cannot connect to the network.\n\nPlease make sure your node is running, and check your internet connection and networks config.",
+          "shouldBeReported": false
+        },
+        "number": 108,
+        "messageArguments": {
+          "network": "localhost"
+        },
+        "_isHardhatError": true
+      }
+    },
+    {
+      "title": "Should revert with the right error if called from another account",
+      "fullTitle": "Lock Withdrawals Validations Should revert with the right error if called from another account",
+      "file": "/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {
+        "stack": "HardhatError: HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config\n    at HttpProvider._fetchJsonRpcResponse (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:221:15)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async HttpProvider.request (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:85:29)\n    at async Object.latest (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/helpers/time/latest.ts:9:24)\n    at async deployOneYearLockFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:18:25)\n    at async loadFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)\n    at async Context.<anonymous> (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:73:52)\n\n    Caused by: Error: connect ECONNREFUSED 127.0.0.1:8545\n        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1595:16)",
+        "message": "HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config",
+        "parent": {
+          "errno": -61,
+          "code": "ECONNREFUSED",
+          "syscall": "connect",
+          "address": "127.0.0.1",
+          "port": 8545
+        },
+        "name": "HardhatError",
+        "_stack": "HardhatError: HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config\n    at HttpProvider._fetchJsonRpcResponse (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:221:15)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async HttpProvider.request (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:85:29)\n    at async Object.latest (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/helpers/time/latest.ts:9:24)\n    at async deployOneYearLockFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:18:25)\n    at async loadFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)\n    at async Context.<anonymous> (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:73:52)",
+        "errorDescriptor": {
+          "number": 108,
+          "message": "Cannot connect to the network %network%.\nPlease make sure your node is running, and check your internet connection and networks config",
+          "title": "Cannot connect to the network",
+          "description": "Cannot connect to the network.\n\nPlease make sure your node is running, and check your internet connection and networks config.",
+          "shouldBeReported": false
+        },
+        "number": 108,
+        "messageArguments": {
+          "network": "localhost"
+        },
+        "_isHardhatError": true
+      }
+    },
+    {
+      "title": "Shouldn't fail if the unlockTime has arrived and the owner calls it",
+      "fullTitle": "Lock Withdrawals Validations Shouldn't fail if the unlockTime has arrived and the owner calls it",
+      "file": "/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {
+        "stack": "HardhatError: HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config\n    at HttpProvider._fetchJsonRpcResponse (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:221:15)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async HttpProvider.request (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:85:29)\n    at async Object.latest (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/helpers/time/latest.ts:9:24)\n    at async deployOneYearLockFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:18:25)\n    at async loadFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)\n    at async Context.<anonymous> (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:87:38)\n\n    Caused by: Error: connect ECONNREFUSED 127.0.0.1:8545\n        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1595:16)",
+        "message": "HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config",
+        "parent": {
+          "errno": -61,
+          "code": "ECONNREFUSED",
+          "syscall": "connect",
+          "address": "127.0.0.1",
+          "port": 8545
+        },
+        "name": "HardhatError",
+        "_stack": "HardhatError: HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config\n    at HttpProvider._fetchJsonRpcResponse (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:221:15)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async HttpProvider.request (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:85:29)\n    at async Object.latest (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/helpers/time/latest.ts:9:24)\n    at async deployOneYearLockFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:18:25)\n    at async loadFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)\n    at async Context.<anonymous> (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:87:38)",
+        "errorDescriptor": {
+          "number": 108,
+          "message": "Cannot connect to the network %network%.\nPlease make sure your node is running, and check your internet connection and networks config",
+          "title": "Cannot connect to the network",
+          "description": "Cannot connect to the network.\n\nPlease make sure your node is running, and check your internet connection and networks config.",
+          "shouldBeReported": false
+        },
+        "number": 108,
+        "messageArguments": {
+          "network": "localhost"
+        },
+        "_isHardhatError": true
+      }
+    },
+    {
+      "title": "Should emit an event on withdrawals",
+      "fullTitle": "Lock Withdrawals Events Should emit an event on withdrawals",
+      "file": "/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {
+        "stack": "HardhatError: HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config\n    at HttpProvider._fetchJsonRpcResponse (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:221:15)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async HttpProvider.request (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:85:29)\n    at async Object.latest (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/helpers/time/latest.ts:9:24)\n    at async deployOneYearLockFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:18:25)\n    at async loadFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)\n    at async Context.<anonymous> (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:100:52)\n\n    Caused by: Error: connect ECONNREFUSED 127.0.0.1:8545\n        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1595:16)",
+        "message": "HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config",
+        "parent": {
+          "errno": -61,
+          "code": "ECONNREFUSED",
+          "syscall": "connect",
+          "address": "127.0.0.1",
+          "port": 8545
+        },
+        "name": "HardhatError",
+        "_stack": "HardhatError: HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config\n    at HttpProvider._fetchJsonRpcResponse (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:221:15)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async HttpProvider.request (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:85:29)\n    at async Object.latest (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/helpers/time/latest.ts:9:24)\n    at async deployOneYearLockFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:18:25)\n    at async loadFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)\n    at async Context.<anonymous> (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:100:52)",
+        "errorDescriptor": {
+          "number": 108,
+          "message": "Cannot connect to the network %network%.\nPlease make sure your node is running, and check your internet connection and networks config",
+          "title": "Cannot connect to the network",
+          "description": "Cannot connect to the network.\n\nPlease make sure your node is running, and check your internet connection and networks config.",
+          "shouldBeReported": false
+        },
+        "number": 108,
+        "messageArguments": {
+          "network": "localhost"
+        },
+        "_isHardhatError": true
+      }
+    },
+    {
+      "title": "Should transfer the funds to the owner",
+      "fullTitle": "Lock Withdrawals Transfers Should transfer the funds to the owner",
+      "file": "/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {
+        "stack": "HardhatError: HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config\n    at HttpProvider._fetchJsonRpcResponse (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:221:15)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async HttpProvider.request (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:85:29)\n    at async Object.latest (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/helpers/time/latest.ts:9:24)\n    at async deployOneYearLockFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:18:25)\n    at async loadFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)\n    at async Context.<anonymous> (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:114:59)\n\n    Caused by: Error: connect ECONNREFUSED 127.0.0.1:8545\n        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1595:16)",
+        "message": "HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config",
+        "parent": {
+          "errno": -61,
+          "code": "ECONNREFUSED",
+          "syscall": "connect",
+          "address": "127.0.0.1",
+          "port": 8545
+        },
+        "name": "HardhatError",
+        "_stack": "HardhatError: HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config\n    at HttpProvider._fetchJsonRpcResponse (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:221:15)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async HttpProvider.request (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:85:29)\n    at async Object.latest (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/helpers/time/latest.ts:9:24)\n    at async deployOneYearLockFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:18:25)\n    at async loadFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)\n    at async Context.<anonymous> (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:114:59)",
+        "errorDescriptor": {
+          "number": 108,
+          "message": "Cannot connect to the network %network%.\nPlease make sure your node is running, and check your internet connection and networks config",
+          "title": "Cannot connect to the network",
+          "description": "Cannot connect to the network.\n\nPlease make sure your node is running, and check your internet connection and networks config.",
+          "shouldBeReported": false
+        },
+        "number": 108,
+        "messageArguments": {
+          "network": "localhost"
+        },
+        "_isHardhatError": true
+      }
+    }
+  ],
+  "pending": [],
+  "failures": [
+    {
+      "title": "Should set the right unlockTime",
+      "fullTitle": "Lock Deployment Should set the right unlockTime",
+      "file": "/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts",
+      "duration": 288,
+      "currentRetry": 0,
+      "err": {
+        "stack": "Error: read ECONNRESET\n    at TCP.onStreamRead (node:internal/stream_base_commons:217:20)",
+        "message": "read ECONNRESET",
+        "errno": -54,
+        "code": "ECONNRESET",
+        "syscall": "read"
+      }
+    },
+    {
+      "title": "Should set the right owner",
+      "fullTitle": "Lock Deployment Should set the right owner",
+      "file": "/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts",
+      "duration": 5,
+      "currentRetry": 0,
+      "err": {
+        "stack": "HardhatError: HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config\n    at HttpProvider._fetchJsonRpcResponse (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:221:15)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async HttpProvider.request (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:85:29)\n    at async Object.latest (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/helpers/time/latest.ts:9:24)\n    at async deployOneYearLockFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:18:25)\n    at async loadFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)\n    at async Context.<anonymous> (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:37:31)\n\n    Caused by: Error: connect ECONNREFUSED 127.0.0.1:8545\n        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1595:16)",
+        "message": "HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config",
+        "parent": {
+          "errno": -61,
+          "code": "ECONNREFUSED",
+          "syscall": "connect",
+          "address": "127.0.0.1",
+          "port": 8545
+        },
+        "name": "HardhatError",
+        "_stack": "HardhatError: HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config\n    at HttpProvider._fetchJsonRpcResponse (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:221:15)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async HttpProvider.request (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:85:29)\n    at async Object.latest (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/helpers/time/latest.ts:9:24)\n    at async deployOneYearLockFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:18:25)\n    at async loadFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)\n    at async Context.<anonymous> (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:37:31)",
+        "errorDescriptor": {
+          "number": 108,
+          "message": "Cannot connect to the network %network%.\nPlease make sure your node is running, and check your internet connection and networks config",
+          "title": "Cannot connect to the network",
+          "description": "Cannot connect to the network.\n\nPlease make sure your node is running, and check your internet connection and networks config.",
+          "shouldBeReported": false
+        },
+        "number": 108,
+        "messageArguments": {
+          "network": "localhost"
+        },
+        "_isHardhatError": true
+      }
+    },
+    {
+      "title": "Should receive and store the funds to lock",
+      "fullTitle": "Lock Deployment Should receive and store the funds to lock",
+      "file": "/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts",
+      "duration": 2,
+      "currentRetry": 0,
+      "err": {
+        "stack": "HardhatError: HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config\n    at HttpProvider._fetchJsonRpcResponse (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:221:15)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async HttpProvider.request (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:85:29)\n    at async Object.latest (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/helpers/time/latest.ts:9:24)\n    at async deployOneYearLockFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:18:25)\n    at async loadFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)\n    at async Context.<anonymous> (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:43:38)\n\n    Caused by: Error: connect ECONNREFUSED 127.0.0.1:8545\n        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1595:16)",
+        "message": "HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config",
+        "parent": {
+          "errno": -61,
+          "code": "ECONNREFUSED",
+          "syscall": "connect",
+          "address": "127.0.0.1",
+          "port": 8545
+        },
+        "name": "HardhatError",
+        "_stack": "HardhatError: HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config\n    at HttpProvider._fetchJsonRpcResponse (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:221:15)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async HttpProvider.request (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:85:29)\n    at async Object.latest (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/helpers/time/latest.ts:9:24)\n    at async deployOneYearLockFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:18:25)\n    at async loadFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)\n    at async Context.<anonymous> (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:43:38)",
+        "errorDescriptor": {
+          "number": 108,
+          "message": "Cannot connect to the network %network%.\nPlease make sure your node is running, and check your internet connection and networks config",
+          "title": "Cannot connect to the network",
+          "description": "Cannot connect to the network.\n\nPlease make sure your node is running, and check your internet connection and networks config.",
+          "shouldBeReported": false
+        },
+        "number": 108,
+        "messageArguments": {
+          "network": "localhost"
+        },
+        "_isHardhatError": true
+      }
+    },
+    {
+      "title": "Should fail if the unlockTime is not in the future",
+      "fullTitle": "Lock Deployment Should fail if the unlockTime is not in the future",
+      "file": "/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {
+        "stack": "HardhatError: HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config\n    at HttpProvider._fetchJsonRpcResponse (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:221:15)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async HttpProvider.request (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:85:29)\n    at async Object.latest (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/helpers/time/latest.ts:9:24)\n    at async Context.<anonymous> (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:54:26)\n\n    Caused by: Error: connect ECONNREFUSED 127.0.0.1:8545\n        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1595:16)",
+        "message": "HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config",
+        "parent": {
+          "errno": -61,
+          "code": "ECONNREFUSED",
+          "syscall": "connect",
+          "address": "127.0.0.1",
+          "port": 8545
+        },
+        "name": "HardhatError",
+        "_stack": "HardhatError: HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config\n    at HttpProvider._fetchJsonRpcResponse (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:221:15)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async HttpProvider.request (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:85:29)\n    at async Object.latest (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/helpers/time/latest.ts:9:24)\n    at async Context.<anonymous> (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:54:26)",
+        "errorDescriptor": {
+          "number": 108,
+          "message": "Cannot connect to the network %network%.\nPlease make sure your node is running, and check your internet connection and networks config",
+          "title": "Cannot connect to the network",
+          "description": "Cannot connect to the network.\n\nPlease make sure your node is running, and check your internet connection and networks config.",
+          "shouldBeReported": false
+        },
+        "number": 108,
+        "messageArguments": {
+          "network": "localhost"
+        },
+        "_isHardhatError": true
+      }
+    },
+    {
+      "title": "Should revert with the right error if called too soon",
+      "fullTitle": "Lock Withdrawals Validations Should revert with the right error if called too soon",
+      "file": "/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {
+        "stack": "HardhatError: HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config\n    at HttpProvider._fetchJsonRpcResponse (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:221:15)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async HttpProvider.request (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:85:29)\n    at async Object.latest (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/helpers/time/latest.ts:9:24)\n    at async deployOneYearLockFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:18:25)\n    at async loadFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)\n    at async Context.<anonymous> (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:65:26)\n\n    Caused by: Error: connect ECONNREFUSED 127.0.0.1:8545\n        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1595:16)",
+        "message": "HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config",
+        "parent": {
+          "errno": -61,
+          "code": "ECONNREFUSED",
+          "syscall": "connect",
+          "address": "127.0.0.1",
+          "port": 8545
+        },
+        "name": "HardhatError",
+        "_stack": "HardhatError: HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config\n    at HttpProvider._fetchJsonRpcResponse (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:221:15)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async HttpProvider.request (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:85:29)\n    at async Object.latest (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/helpers/time/latest.ts:9:24)\n    at async deployOneYearLockFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:18:25)\n    at async loadFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)\n    at async Context.<anonymous> (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:65:26)",
+        "errorDescriptor": {
+          "number": 108,
+          "message": "Cannot connect to the network %network%.\nPlease make sure your node is running, and check your internet connection and networks config",
+          "title": "Cannot connect to the network",
+          "description": "Cannot connect to the network.\n\nPlease make sure your node is running, and check your internet connection and networks config.",
+          "shouldBeReported": false
+        },
+        "number": 108,
+        "messageArguments": {
+          "network": "localhost"
+        },
+        "_isHardhatError": true
+      }
+    },
+    {
+      "title": "Should revert with the right error if called from another account",
+      "fullTitle": "Lock Withdrawals Validations Should revert with the right error if called from another account",
+      "file": "/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {
+        "stack": "HardhatError: HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config\n    at HttpProvider._fetchJsonRpcResponse (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:221:15)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async HttpProvider.request (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:85:29)\n    at async Object.latest (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/helpers/time/latest.ts:9:24)\n    at async deployOneYearLockFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:18:25)\n    at async loadFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)\n    at async Context.<anonymous> (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:73:52)\n\n    Caused by: Error: connect ECONNREFUSED 127.0.0.1:8545\n        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1595:16)",
+        "message": "HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config",
+        "parent": {
+          "errno": -61,
+          "code": "ECONNREFUSED",
+          "syscall": "connect",
+          "address": "127.0.0.1",
+          "port": 8545
+        },
+        "name": "HardhatError",
+        "_stack": "HardhatError: HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config\n    at HttpProvider._fetchJsonRpcResponse (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:221:15)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async HttpProvider.request (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:85:29)\n    at async Object.latest (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/helpers/time/latest.ts:9:24)\n    at async deployOneYearLockFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:18:25)\n    at async loadFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)\n    at async Context.<anonymous> (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:73:52)",
+        "errorDescriptor": {
+          "number": 108,
+          "message": "Cannot connect to the network %network%.\nPlease make sure your node is running, and check your internet connection and networks config",
+          "title": "Cannot connect to the network",
+          "description": "Cannot connect to the network.\n\nPlease make sure your node is running, and check your internet connection and networks config.",
+          "shouldBeReported": false
+        },
+        "number": 108,
+        "messageArguments": {
+          "network": "localhost"
+        },
+        "_isHardhatError": true
+      }
+    },
+    {
+      "title": "Shouldn't fail if the unlockTime has arrived and the owner calls it",
+      "fullTitle": "Lock Withdrawals Validations Shouldn't fail if the unlockTime has arrived and the owner calls it",
+      "file": "/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {
+        "stack": "HardhatError: HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config\n    at HttpProvider._fetchJsonRpcResponse (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:221:15)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async HttpProvider.request (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:85:29)\n    at async Object.latest (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/helpers/time/latest.ts:9:24)\n    at async deployOneYearLockFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:18:25)\n    at async loadFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)\n    at async Context.<anonymous> (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:87:38)\n\n    Caused by: Error: connect ECONNREFUSED 127.0.0.1:8545\n        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1595:16)",
+        "message": "HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config",
+        "parent": {
+          "errno": -61,
+          "code": "ECONNREFUSED",
+          "syscall": "connect",
+          "address": "127.0.0.1",
+          "port": 8545
+        },
+        "name": "HardhatError",
+        "_stack": "HardhatError: HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config\n    at HttpProvider._fetchJsonRpcResponse (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:221:15)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async HttpProvider.request (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:85:29)\n    at async Object.latest (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/helpers/time/latest.ts:9:24)\n    at async deployOneYearLockFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:18:25)\n    at async loadFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)\n    at async Context.<anonymous> (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:87:38)",
+        "errorDescriptor": {
+          "number": 108,
+          "message": "Cannot connect to the network %network%.\nPlease make sure your node is running, and check your internet connection and networks config",
+          "title": "Cannot connect to the network",
+          "description": "Cannot connect to the network.\n\nPlease make sure your node is running, and check your internet connection and networks config.",
+          "shouldBeReported": false
+        },
+        "number": 108,
+        "messageArguments": {
+          "network": "localhost"
+        },
+        "_isHardhatError": true
+      }
+    },
+    {
+      "title": "Should emit an event on withdrawals",
+      "fullTitle": "Lock Withdrawals Events Should emit an event on withdrawals",
+      "file": "/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {
+        "stack": "HardhatError: HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config\n    at HttpProvider._fetchJsonRpcResponse (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:221:15)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async HttpProvider.request (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:85:29)\n    at async Object.latest (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/helpers/time/latest.ts:9:24)\n    at async deployOneYearLockFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:18:25)\n    at async loadFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)\n    at async Context.<anonymous> (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:100:52)\n\n    Caused by: Error: connect ECONNREFUSED 127.0.0.1:8545\n        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1595:16)",
+        "message": "HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config",
+        "parent": {
+          "errno": -61,
+          "code": "ECONNREFUSED",
+          "syscall": "connect",
+          "address": "127.0.0.1",
+          "port": 8545
+        },
+        "name": "HardhatError",
+        "_stack": "HardhatError: HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config\n    at HttpProvider._fetchJsonRpcResponse (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:221:15)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async HttpProvider.request (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:85:29)\n    at async Object.latest (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/helpers/time/latest.ts:9:24)\n    at async deployOneYearLockFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:18:25)\n    at async loadFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)\n    at async Context.<anonymous> (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:100:52)",
+        "errorDescriptor": {
+          "number": 108,
+          "message": "Cannot connect to the network %network%.\nPlease make sure your node is running, and check your internet connection and networks config",
+          "title": "Cannot connect to the network",
+          "description": "Cannot connect to the network.\n\nPlease make sure your node is running, and check your internet connection and networks config.",
+          "shouldBeReported": false
+        },
+        "number": 108,
+        "messageArguments": {
+          "network": "localhost"
+        },
+        "_isHardhatError": true
+      }
+    },
+    {
+      "title": "Should transfer the funds to the owner",
+      "fullTitle": "Lock Withdrawals Transfers Should transfer the funds to the owner",
+      "file": "/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {
+        "stack": "HardhatError: HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config\n    at HttpProvider._fetchJsonRpcResponse (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:221:15)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async HttpProvider.request (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:85:29)\n    at async Object.latest (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/helpers/time/latest.ts:9:24)\n    at async deployOneYearLockFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:18:25)\n    at async loadFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)\n    at async Context.<anonymous> (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:114:59)\n\n    Caused by: Error: connect ECONNREFUSED 127.0.0.1:8545\n        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1595:16)",
+        "message": "HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config",
+        "parent": {
+          "errno": -61,
+          "code": "ECONNREFUSED",
+          "syscall": "connect",
+          "address": "127.0.0.1",
+          "port": 8545
+        },
+        "name": "HardhatError",
+        "_stack": "HardhatError: HH108: Cannot connect to the network localhost.\nPlease make sure your node is running, and check your internet connection and networks config\n    at HttpProvider._fetchJsonRpcResponse (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:221:15)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async HttpProvider.request (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/hardhat/src/internal/core/providers/http.ts:85:29)\n    at async Object.latest (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/helpers/time/latest.ts:9:24)\n    at async deployOneYearLockFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:18:25)\n    at async loadFixture (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/node_modules/@nomicfoundation/hardhat-network-helpers/src/loadFixture.ts:59:18)\n    at async Context.<anonymous> (/Users/richzhao/repos/zRich/blockchain-lab/go-backend/test/Lock.ts:114:59)",
+        "errorDescriptor": {
+          "number": 108,
+          "message": "Cannot connect to the network %network%.\nPlease make sure your node is running, and check your internet connection and networks config",
+          "title": "Cannot connect to the network",
+          "description": "Cannot connect to the network.\n\nPlease make sure your node is running, and check your internet connection and networks config.",
+          "shouldBeReported": false
+        },
+        "number": 108,
+        "messageArguments": {
+          "network": "localhost"
+        },
+        "_isHardhatError": true
+      }
+    }
+  ],
+  "passes": []
+}

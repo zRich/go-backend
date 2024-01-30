@@ -28,6 +28,8 @@ func (p *PostgreDB) AutoMigrate() {
 	p.DB.AutoMigrate(&models.Course{})
 	p.DB.AutoMigrate(&models.Task{})
 	p.DB.AutoMigrate(&models.Student{})
+	p.DB.AutoMigrate(&models.Score{})
+	p.DB.AutoMigrate(&models.TestReport{})
 }
 
 func (p *PostgreDB) Connect() (*gorm.DB, error) {

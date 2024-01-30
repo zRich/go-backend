@@ -9,6 +9,7 @@ import (
 	"github.com/spf13/viper"
 	"github.com/zRich/go-backend/api"
 	"github.com/zRich/go-backend/internal/db"
+	"github.com/zRich/go-backend/internal/lab"
 )
 
 func main() {
@@ -34,12 +35,26 @@ func main() {
 		panic(fmt.Errorf("fatal error config file: %w ", err))
 	}
 
+	//从配置文件中读取 链配置
+	chainPort := viper.GetInt("chain.port")
+	// 创建 chain
+	chain := &lab.Chain{
+		Port: chainPort,
+	}
+
+	// 创建 operator
+	operator := &lab.Operator{
+		DB:    database,
+		Chain: chain,
+	}
+
 	restConfig := api.RestServerConfig{}
 
 	restConfig.Address = viper.GetString("server.address")
 	restConfig.Port = viper.GetInt("server.port")
 	restConfig.Prefix = viper.GetString("server.prefix")
 	restConfig.DB = database
+	restConfig.Operator = operator
 
 	if err != nil {
 		panic(fmt.Errorf("fatal error config file: %w ", err))

@@ -1,11 +1,20 @@
 package lab
 
 import (
+	"encoding/json"
 	"fmt"
 	"os/exec"
 
+	"github.com/zRich/go-backend/internal/db"
+	"github.com/zRich/go-backend/internal/db/models"
 	"github.com/zRich/go-backend/internal/log"
+	"github.com/zRich/go-backend/internal/mocha"
 )
+
+type Operator struct {
+	DB    db.Database
+	Chain *Chain
+}
 
 type Chain struct {
 	Host    string
@@ -25,7 +34,7 @@ var logger = log.InitLogger()
 
 func (chain *Chain) Start() {
 	// 执行 yarn chain 命令
-	cmd := exec.Command("yarn", "chain")
+	cmd := exec.Command("npx", "hardhat", "node")
 	cmd.Stdout = chain
 	// out, err := cmd.Output()
 	err := cmd.Start()
@@ -42,8 +51,7 @@ func (chain *Chain) Start() {
 			log.Log.Error("chain process exit")
 		}
 
-		//print pid
-		fmt.Printf("chain pid: %d\n", chain_pid)
+		logger.Info(fmt.Sprintf("chain process exit, pid: %d", chain_pid))
 	}()
 }
 
@@ -69,13 +77,46 @@ func (chain *Chain) Stop() {
 
 func (chain *Chain) Deploy() {
 	// 执行 yarn deploy 命令
-	cmd := exec.Command("yarn", "deploy")
+	cmd := exec.Command("npx", "hardhat", "test")
 	cmd.Stdout = chain
 	// out, err := cmd.Output()
 	err := cmd.Run()
 	if err != nil {
-		log.Log.Error("deploy failed")
+		logger.Error(fmt.Sprintf("deploy failed, output: %s", string(chain.output)))
 	}
 
-	fmt.Printf("yarn deploy output\n%s\n", chain.output)
+	logger.Info("deploy success")
+}
+
+// 将一个 mocha 测试报告存入数据库
+func (o *Operator) SaveReport(studentNo string, report *mocha.Report) error {
+	// 定义一个 TestReport 结构体
+	var testReport models.TestReport
+	// 将 report 转换为 json 格式字符串
+	reportJson, err := json.Marshal(report)
+	if err != nil {
+		return err
+	}
+	db, err := o.DB.Connect()
+	if err != nil {
+		return err
+	}
+
+	// 给 testReport 赋值
+	testReport.StudentNo = studentNo
+	testReport.Report = string(reportJson)
+
+	// 将 reportJson 存入数据库
+	db.Create(&testReport)
+
+	// (&testReport, models.TestReport{StudentNo: studentNo, Report: string(reportJson)})
+	return nil
+}
+
+// 创建一个 Operator
+func NewOperator(db db.Database, chain *Chain) *Operator {
+	return &Operator{
+		DB:    db,
+		Chain: chain,
+	}
 }

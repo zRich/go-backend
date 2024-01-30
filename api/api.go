@@ -6,15 +6,17 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/zRich/go-backend/internal/auth"
 	"github.com/zRich/go-backend/internal/db"
+	"github.com/zRich/go-backend/internal/lab"
 	"github.com/zRich/go-backend/internal/log"
 	"github.com/zRich/go-backend/internal/server"
 )
 
 type RestServerConfig struct {
-	Address string
-	Port    int
-	Prefix  string
-	DB      db.Database
+	Address  string
+	Port     int
+	Prefix   string
+	DB       db.Database
+	Operator *lab.Operator
 }
 
 func (c *RestServerConfig) GetAddress() string {
@@ -34,6 +36,7 @@ type RestServer struct {
 	Config    server.ServerConfig
 	engine    *gin.Engine
 	Endpoints []server.Endpoint
+	Operator  *lab.Operator
 }
 
 var logger = log.InitLogger()
@@ -107,9 +110,10 @@ func (s *RestServer) initServer() {
 
 func NewRestServer(config RestServerConfig) server.Server {
 	restServer := &RestServer{
-		Config: &config,
-		DB:     config.DB,
-		engine: gin.Default(),
+		Config:   &config,
+		DB:       config.DB,
+		engine:   gin.Default(),
+		Operator: config.Operator,
 	}
 	return restServer
 }
