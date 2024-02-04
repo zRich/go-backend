@@ -18,7 +18,7 @@ func (e *GetTasksEndpoint) Method() string {
 }
 
 func (e *GetTasksEndpoint) Path() string {
-	return "/tasks"
+	return "tasks"
 }
 
 func (e *GetTasksEndpoint) LoginVerify() bool {
@@ -58,7 +58,7 @@ func (e *CreateTaskEndpoint) Method() string {
 }
 
 func (e *CreateTaskEndpoint) Path() string {
-	return "/tasks"
+	return "tasks"
 }
 
 func (e *CreateTaskEndpoint) LoginVerify() bool {
@@ -90,7 +90,7 @@ func (e *UpdateTaskEndpoint) Method() string {
 }
 
 func (e *UpdateTaskEndpoint) Path() string {
-	return "/tasks/:id"
+	return "tasks/:id"
 }
 
 func (e *UpdateTaskEndpoint) LoginVerify() bool {
@@ -122,7 +122,7 @@ func (e *DeleteTaskEndpoint) Method() string {
 }
 
 func (e *DeleteTaskEndpoint) Path() string {
-	return "/tasks/:id"
+	return "tasks/:id"
 }
 
 func (e *DeleteTaskEndpoint) LoginVerify() bool {

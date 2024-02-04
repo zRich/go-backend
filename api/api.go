@@ -14,7 +14,7 @@ import (
 type RestServerConfig struct {
 	Address  string
 	Port     int
-	Prefix   string
+	Version  string
 	DB       db.Database
 	Operator *lab.Operator
 }
@@ -27,8 +27,8 @@ func (c *RestServerConfig) GetPort() int {
 	return c.Port
 }
 
-func (c *RestServerConfig) GetPrefix() string {
-	return c.Prefix
+func (c *RestServerConfig) GetVersion() string {
+	return c.Version
 }
 
 type RestServer struct {
@@ -52,7 +52,7 @@ func (s *RestServer) Start() error {
 	r.Use(server.Cors())
 
 	// route group version 1
-	v1 := r.Group(s.Config.GetPrefix())
+	v1 := r.Group(fmt.Sprintf("/api/%s", s.Config.GetVersion()))
 	authRoute := v1.Group("/auth")
 	{
 		authRoute.POST("/auth/signup", auth.Signup)
@@ -81,7 +81,7 @@ func (s *RestServer) AddEndpoint(endpoint server.Endpoint) {
 	if !endpoint.LoginVerify() {
 		handlers = handlers[1:]
 	}
-	s.engine.Handle(endpoint.Method(), fmt.Sprintf("%s/%s", s.Config.GetPrefix(), endpoint.Path()), handlers...)
+	s.engine.Handle(endpoint.Method(), fmt.Sprintf("api/%s/%s", s.Config.GetVersion(), endpoint.Path()), handlers...)
 }
 
 func (s *RestServer) GetEndpoints() []server.Endpoint {

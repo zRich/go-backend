@@ -22,12 +22,6 @@ func main() {
 		panic(fmt.Errorf("fatal error config file: %w ", err))
 	}
 
-	// // 从配置文件中读取 postgresql 的配置
-	// dbConfig, err := db.GlobalConfig()
-	// if err != nil {
-	// 	panic(fmt.Errorf("fatal error config file: %w ", err))
-	// }
-	// // 初始化数据库连接
 	database, err := db.InitDBFromConfig()
 	database.AutoMigrate()
 
@@ -52,7 +46,7 @@ func main() {
 
 	restConfig.Address = viper.GetString("server.address")
 	restConfig.Port = viper.GetInt("server.port")
-	restConfig.Prefix = viper.GetString("server.prefix")
+	restConfig.Version = viper.GetString("server.version")
 	restConfig.DB = database
 	restConfig.Operator = operator
 

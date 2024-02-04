@@ -3,7 +3,7 @@ package server
 type ServerConfig interface {
 	GetAddress() string
 	GetPort() int
-	GetPrefix() string
+	GetVersion() string
 }
 
 // type RestConfig struct {
