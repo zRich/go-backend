@@ -123,7 +123,8 @@ func LoginPlaintextPasswordJWT(c *gin.Context) {
 
 	loginResponse.Token = tokenString
 	c.SetSameSite(http.SameSiteLaxMode)
-	c.SetCookie("Authorization", tokenString, 3600*24, "", "", false, true)
+	//Set Authorization Bearer token
+	// c.SetCookie("Authorization Bearer", tokenString, 3600*24, "", "", false, true)
 	c.JSON(http.StatusOK, loginResponse)
 }
 

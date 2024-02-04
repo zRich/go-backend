@@ -55,11 +55,11 @@ func (s *RestServer) Start() error {
 	v1 := r.Group(fmt.Sprintf("/api/%s", s.Config.GetVersion()))
 	authRoute := v1.Group("/auth")
 	{
-		authRoute.POST("/auth/signup", auth.Signup)
-		authRoute.POST("/auth/login", auth.LoginPlaintextPasswordJWT)
-		authRoute.POST("/auth/forgetPassword", auth.ForgetPassword)
+		authRoute.POST("/signup", auth.Signup)
+		authRoute.POST("/login", auth.LoginPlaintextPasswordJWT)
+		authRoute.POST("/forgetPassword", auth.ForgetPassword)
 		//reset password
-		authRoute.POST("/auth/resetPassword", auth.ResetPassword)
+		authRoute.POST("/resetPassword", auth.ResetPassword)
 	}
 
 	logger.Info("server start")
